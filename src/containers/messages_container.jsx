@@ -6,12 +6,9 @@ import { fetchMessage } from '../actions';
 import MessageForm from './message_form';
 
 class MessagesContainer extends Component {
-  componentWillMount() {
-    this.props.fetchMessage('general');
-  }
-
   componentDidMount() {
-    this.refresher = setInterval(this.props.fetchMessage, 5000);
+    this.props.fetchMessage(this.props.selectedChannel);
+    this.refresher = setInterval(() => { this.props.fetchMessage(this.props.selectedChannel); }, 5000);
   }
 
   componentDidUpdate() {
@@ -24,7 +21,7 @@ class MessagesContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="ml-3">
         <div className="message-container" ref={(list) => { this.list = list; }}>
           {this.props.messages.map((message) => {
             return <Message message={message} key={Math.random() * 10000000000000000} />;
@@ -40,7 +37,8 @@ class MessagesContainer extends Component {
 
 function mapStateToProps(state) {
   return ({
-    messages: state.messages
+    messages: state.messages,
+    selectedChannel: state.selectedChannel
   });
 }
 

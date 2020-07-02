@@ -21,7 +21,10 @@ class MessagesContainer extends Component {
 
   render() {
     return (
-      <div className="ml-3">
+      <div className="ml-3 flex-grow-1">
+        <div className="channel-title">
+          Channel #{this.props.selectedChannel}
+        </div>
         <div className="message-container" ref={(list) => { this.list = list; }}>
           {this.props.messages.map((message) => {
             return <Message message={message} key={Math.random() * 10000000000000000} />;

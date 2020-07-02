@@ -1,10 +1,51 @@
 body {
   font-family: Helvetica;
 }
+
+.logo-LW {
+  height: 10vh;
+  width: 10vh;
+}
+
+.left-bar {
+  background-color: #969696;
+  padding: 20px;
+}
+
+.channel-list {
+  background-color: #dddddd;
+  padding: 20px;
+}
+
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
+  height: 100vh;
+}
+
+.btn-red {
+  background-color: rgb(129, 0, 0);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: white;
+  border: none;
+  &:hover {
+    background-color: rgba(129, 0, 0, 0.8);
+  }
+}
+
+.message-container {
+  height: 75vh;
+}
+
+.channel {
+  cursor: pointer;
+}
+
+.channel-title {
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .message {

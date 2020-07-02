@@ -27,9 +27,9 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <form>
-        <input type="text" name="name" id="message-content" value={this.state.value} ref={(input) => { this.messageBox = input; }} onChange={this.handleChange} />
-        <input type="submit" value="Envoyer" onClick={this.handleSubmit} />
+      <form className="d-flex mr-4">
+        <input type="text" className="form-control" name="name" id="message-content" value={this.state.value} ref={(input) => { this.messageBox = input; }} onChange={this.handleChange} />
+        <input type="submit" value="Envoyer" className="btn-red" onClick={this.handleSubmit} />
       </form>
     );
   }
